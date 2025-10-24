@@ -1,0 +1,64 @@
+body {
+  background: rgb(211, 211, 211);
+}
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  position: relative;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu > li > a {
+  display: block;
+  padding: 15px 25px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.menu > li > a:hover,
+.menu > li:hover > a {
+  background-color: #97d700;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  min-width: 220px;
+
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.submenu li a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.submenu li a:hover {
+  background-color: #d6d4d4;
+}
+
+.dropdown:hover .submenu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
